@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: A8DF8E;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.DashBoardFormcontroller">
+   <children>
+      <Pane layoutX="1.0" layoutY="1.0" prefHeight="716.0" prefWidth="234.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton layoutY="200.0" onAction="#btnCustomeronAction" prefHeight="70.0" prefWidth="234.0" text="Customer" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="1.0" layoutY="271.0" onAction="#btnOrderonAction" prefHeight="70.0" prefWidth="234.0" text="Order">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="2.0" layoutY="341.0" onAction="#btnStockonAction" prefHeight="70.0" prefWidth="234.0" text="Stock">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="1.0" layoutY="411.0" onAction="#btnEmployeeonAction" prefHeight="70.0" prefWidth="234.0" text="Employee">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+            <JFXButton layoutY="481.0" onAction="#btnSalaryonAction" prefHeight="70.0" prefWidth="234.0" text="Salary">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+            <ImageView fitHeight="208.0" fitWidth="232.0" layoutX="4.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../image/app%202.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="-1.0" layoutY="550.0" onAction="#btnSupplieronAction" prefHeight="70.0" prefWidth="234.0" text="Supplier">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="235.0" layoutY="1.0" prefHeight="146.0" prefWidth="971.0" style="-fx-background-color: #004225;">
+         <children>
+            <Label layoutX="41.0" layoutY="38.0" prefHeight="60.0" prefWidth="420.0" text=" DASHBOARD" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="119.26" radius="29.315" width="0.0" />
+         </effect>
+      </Pane>
+      <Pane focusTraversable="true" layoutX="733.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="13.0" layoutY="28.0" prefHeight="40.0" prefWidth="155.0" text="Total Orders" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label layoutX="77.0" layoutY="68.0" text="23" textAlignment="CENTER" textFill="#5e4c4c">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+         <effect>
+            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+         </effect>
+      </Pane>
+      <Pane focusTraversable="true" layoutX="319.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="26.0" layoutY="30.0" prefHeight="40.0" prefWidth="135.0" text="New Users" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label layoutX="80.0" layoutY="70.0" text="13" textAlignment="CENTER" textFill="#5e4c4c">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+         <effect>
+            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+         </effect>
+      </Pane>
+      <Pane focusTraversable="true" layoutX="940.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="9.0" layoutY="26.0" prefHeight="40.0" prefWidth="163.0" text="Product Sold" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="66.0" text="17" textAlignment="CENTER" textFill="#5e4c4c">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+         </effect>
+      </Pane>
+      <Pane focusTraversable="true" layoutX="526.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="44.0" layoutY="23.0" prefHeight="40.0" prefWidth="101.0" text="Progress" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label layoutX="45.0" layoutY="70.0" text="\$,10000" textAlignment="CENTER" textFill="#5e4c4c">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+         <effect>
+            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+         </effect>
+      </Pane>
+      <Label layoutX="599.0" layoutY="51.0" />
+      <StackedAreaChart layoutX="265.0" layoutY="348.0" prefHeight="368.0" prefWidth="911.0" title="Monthly Progress">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedAreaChart>
+   </children>
+   <opaqueInsets>
+      <Insets top="10.0" />
+   </opaqueInsets>
+</AnchorPane>

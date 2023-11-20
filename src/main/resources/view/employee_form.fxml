@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.EmployeeFormcontroller">
+   <children>
+      <Pane layoutX="43.0" layoutY="158.0" prefHeight="290.0" prefWidth="596.0" style="-fx-background-color: BF9742;">
+         <children>
+            <TextField fx:id="txtFirst_name" layoutX="40.0" layoutY="56.0" prefHeight="26.0" prefWidth="221.0" promptText="First_name" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+            <TextField fx:id="txttLast_name" layoutX="324.0" layoutY="56.0" prefHeight="26.0" prefWidth="221.0" promptText="Last_name" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+            <TextField fx:id="txtCity" layoutX="324.0" layoutY="208.0" prefHeight="26.0" prefWidth="221.0" promptText="City" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+            <TextField fx:id="txtNic" layoutX="324.0" layoutY="132.0" prefHeight="26.0" prefWidth="221.0" promptText="Nic" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+            <TextField fx:id="txtEmployee_id" layoutX="40.0" layoutY="132.0" onAction="#txtsearchOnAction" prefHeight="26.0" prefWidth="221.0" promptText="Employee Id" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+            <TextField fx:id="txttel" layoutX="40.0" layoutY="208.0" prefHeight="26.0" prefWidth="221.0" promptText="Contact No" style="-fx-background-color: transpared;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></TextField>
+         </children>
+      </Pane>
+      <TableView fx:id="tblEmployee" layoutX="64.0" layoutY="483.0" prefHeight="290.0" prefWidth="688.0" style="-fx-background-color: EEC373;">
+         <columns>
+            <TableColumn fx:id="colid" prefWidth="123.20001602172852" style="-fx-background-color: -fx-background-color;" text="Employee Id" />
+            <TableColumn fx:id="colfirst_name" prefWidth="110.39994812011719" style="-fx-background-color: -fx-background-color;" text="First_Name" />
+            <TableColumn fx:id="collast_name" prefWidth="104.79998779296875" style="-fx-background-color: -fx-background-color;" text="Last_Name" />
+            <TableColumn fx:id="colnic" prefWidth="120.0" style="-fx-background-color: -fx-background-color;" text="Nic" />
+            <TableColumn fx:id="colcity" prefWidth="110.4000244140625" style="-fx-background-color: -fx-background-color;" text="City" />
+            <TableColumn fx:id="coltel" prefWidth="122.39996337890625" style="-fx-background-color: -fx-background-color;" text="Contact_No" />
+         </columns>
+      </TableView>
+      <Pane prefHeight="146.0" prefWidth="1207.0" style="-fx-background-color: #61481C;">
+         <children>
+            <Label layoutX="456.0" layoutY="38.0" prefHeight="73.0" prefWidth="270.0" text="EMPLOYEE" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+            <JFXButton layoutX="1090.0" layoutY="55.0" onAction="#btnbackOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-border-radius: 10;" text="Back" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="fontcolor" />
+                  <String fx:value="penenew" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets right="56.0" top="10.0" />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/previous.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton layoutX="698.0" layoutY="213.0" onAction="#btnsaveeOnAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: D83F31;" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="698.0" layoutY="255.0" onAction="#btnupdateOnAction" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: F0DE36;" text="Update">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="699.0" layoutY="298.0" onAction="#btndeleteOnAction" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: F3AA60;" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="701.0" layoutY="343.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: transperns; -fx-border-radius: transpa 20pxrent; -fx-border-color: 20px;" text="  ">
+         <styleClass>
+            <String fx:value="fontcolor" />
+            <String fx:value="penenew" />
+         </styleClass>
+         <opaqueInsets>
+            <Insets right="56.0" top="10.0" />
+         </opaqueInsets>
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0">
+               <image>
+                  <Image url="@../image/cleaning.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

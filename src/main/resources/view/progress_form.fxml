@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.ProgressFormcontroller">
+   <children>
+      <TextField fx:id="txtid" layoutX="135.0" layoutY="237.0" promptText="id">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txtdate" layoutX="394.0" layoutY="237.0" promptText="date">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txtamount" layoutX="393.0" layoutY="299.0" promptText="amount">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txttime" layoutX="135.0" layoutY="298.0" promptText="time">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <TableView fx:id="tblProgress" layoutX="131.0" layoutY="387.0" prefHeight="283.0" prefWidth="477.0" style="-fx-background-color: FFE3E1;">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="coldate" prefWidth="157.6000518798828" text="date" />
+            <TableColumn fx:id="coltime" prefWidth="95.199951171875" text="time" />
+            <TableColumn fx:id="colamount" prefWidth="148.800048828125" text="amount" />
+        </columns>
+      </TableView>
+      <Pane prefHeight="146.0" prefWidth="1207.0" style="-fx-background-color: B83B5E;">
+         <children>
+            <Label layoutX="477.0" layoutY="39.0" prefHeight="73.0" prefWidth="272.0" text="PROGRESS " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+            <JFXButton layoutX="1090.0" layoutY="55.0" onAction="#btnbackOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-border-radius: 10;" text="Back" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="fontcolor" />
+                  <String fx:value="penenew" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets right="56.0" top="10.0" />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/previous.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <ImageView fitHeight="218.0" fitWidth="307.0" layoutX="844.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/rising.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="704.0" layoutY="286.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F0DE36;" text="Delete">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="704.0" layoutY="329.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F3AA60;" text="Update">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="704.0" layoutY="242.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: D83F31;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

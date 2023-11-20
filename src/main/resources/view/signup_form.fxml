@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #005B41;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.SignupFormcontroller">
+   <children>
+      <Pane layoutX="543.0" layoutY="97.0" prefHeight="546.0" prefWidth="442.0" style="-fx-background-color: #508D69; -fx-background-radius: 70;">
+         <children>
+            <TextField fx:id="txtemail" layoutX="52.0" layoutY="158.0" prefHeight="38.0" prefWidth="356.0" promptText="    Email" />
+            <Line endX="232.86663818359375" endY="3.0517578125E-5" layoutX="177.0" layoutY="199.0" startX="-124.2667236328125" startY="3.0517578125E-5" stroke="#151515" />
+            <Text fill="#ccc4c4" layoutX="127.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <TextField fx:id="txtpassword" layoutX="54.0" layoutY="283.0" prefHeight="38.0" prefWidth="357.0" promptText="     Password" />
+            <JFXButton fx:id="btnsignup" layoutX="173.0" layoutY="387.0" onAction="#btnsignupOnAction" prefHeight="38.0" prefWidth="91.0" style="-fx-border-color: #6767D6; -fx-border-radius: 5;" text="Sign up" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="btnlogin" layoutX="27.0" layoutY="488.0" onAction="#btnloginOnAction" prefHeight="31.0" prefWidth="91.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Line endX="231.93341064453125" endY="3.0517578125E-5" layoutX="179.0" layoutY="325.0" startX="-122.13330078125" startY="3.0517578125E-5" stroke="#151515" />
+            <Text fill="#1728e1" layoutX="318.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password" />
+            <ImageView fitHeight="121.0" fitWidth="122.0" layoutX="175.0" layoutY="-54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/edit.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtusername" layoutX="53.0" layoutY="223.0" prefHeight="38.0" prefWidth="356.0" promptText="    User Name" />
+            <Line endX="231.86663818359375" endY="3.0517578125E-5" layoutX="178.0" layoutY="264.0" startX="-124.2667236328125" startY="3.0517578125E-5" stroke="#151515" />
+            <CheckBox layoutX="56.0" layoutY="349.0" mnemonicParsing="false" text="Remember Me">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </Pane>
+      <ImageView fitHeight="688.0" fitWidth="650.0" layoutX="-17.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/app%202.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="95.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEA FACTORY (PVT LTD)  " textAlignment="CENTER" wrappingWidth="360.74999999999994">
+         <font>
+            <Font name="Impact" size="48.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9999999990968993">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.9834567904472351" blue="0.007407407276332378" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="1.0" blue="0.04441624507308006" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+   </children>
+</AnchorPane>
