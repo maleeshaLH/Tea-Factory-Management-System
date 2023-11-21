@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.ProgressFormcontroller">
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.ProgressFormcontroller">
    <children>
       <TextField fx:id="txtid" layoutX="135.0" layoutY="237.0" promptText="id">
          <font>
@@ -76,17 +71,17 @@
             <Image url="@../image/rising.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="704.0" layoutY="286.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F0DE36;" text="Delete">
+      <JFXButton layoutX="704.0" layoutY="286.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Delete" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="704.0" layoutY="329.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F3AA60;" text="Update">
+      <JFXButton layoutX="704.0" layoutY="329.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Update" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="704.0" layoutY="242.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: D83F31;" text="Save" textFill="WHITE">
+      <JFXButton layoutX="704.0" layoutY="242.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Save" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>

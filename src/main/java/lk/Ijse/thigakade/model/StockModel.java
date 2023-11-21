@@ -147,7 +147,7 @@ public class StockModel {
     private boolean updateQty(CartTm cartTm) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE qty SET p_id = qty - ? WHERE p_id = ?";
+        String sql = "UPDATE prepared_stock SET qty = qty - ? WHERE p_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setInt(1, cartTm.getQty());
         pstm.setString(2, cartTm.getP_id());

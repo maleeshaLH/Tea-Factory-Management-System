@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.SalaryFormController">
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.SalaryFormController">
    <children>
-      <JFXButton layoutX="886.0" layoutY="345.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: transperns; -fx-border-radius: transpa 20pxrent; -fx-border-color: 20px;" text="  ">
+      <JFXButton layoutX="886.0" layoutY="260.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: transperns; -fx-border-radius: transpa 20pxrent; -fx-border-color: 20px;" text="  ">
          <styleClass>
             <String fx:value="fontcolor" />
             <String fx:value="penenew" />
@@ -33,53 +27,44 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="853.0" layoutY="250.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F0DE36;" text="Delete">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="853.0" layoutY="293.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: F3AA60;" text="Update">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="853.0" layoutY="206.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-border-radius: 10; -fx-background-color: D83F31;" text="Save" textFill="WHITE">
+      <JFXButton layoutX="853.0" layoutY="206.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Save" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
       <Pane layoutX="161.0" layoutY="166.0" prefHeight="290.0" prefWidth="635.0" style="-fx-background-color: FF6969;">
          <children>
-            <TextField fx:id="txtLast_name" layoutX="33.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Salary ID" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtsalaryid" layoutX="33.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Salary ID" style="-fx-background-color: transpared;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-            <TextField fx:id="txttel" layoutX="290.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Salary" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtsalary" layoutX="290.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Salary" style="-fx-background-color: transpared;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-            <ComboBox layoutX="33.0" layoutY="61.0" prefHeight="38.0" prefWidth="228.0" promptText="Employee ID" style="-fx-background-color: TRANSPARED;" />
+            <ComboBox fx:id="cmbEmployeeId" layoutX="33.0" layoutY="61.0" onAction="#cmbEmployeeOnAction" prefHeight="38.0" prefWidth="228.0" promptText="Employee ID" style="-fx-background-color: TRANSPARED;" />
             <Label layoutX="41.0" layoutY="189.0" prefHeight="25.0" prefWidth="42.0" text="Date" textFill="#facaca">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="297.0" layoutY="68.0" prefHeight="25.0" prefWidth="51.0" text="Name" textFill="#facaca">
+            <Label layoutX="356.0" layoutY="68.0" prefHeight="25.0" prefWidth="69.0" text="Name :" textFill="#facaca">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
+            <Label fx:id="lblEmployeeName" layoutX="444.0" layoutY="72.0" />
+            <Label fx:id="lblSalaryDate" layoutX="110.0" layoutY="193.0" />
          </children>
       </Pane>
-      <TableView fx:id="tblCustomer" layoutX="161.0" layoutY="472.0" prefHeight="300.0" prefWidth="635.0">
+      <TableView fx:id="tblSalary" layoutX="161.0" layoutY="472.0" prefHeight="300.0" prefWidth="635.0">
          <columns>
-            <TableColumn fx:id="colId" prefWidth="112.80002212524414" style="-fx-background-color: #FAF2D3;" text="Employee ID" />
-            <TableColumn fx:id="colFirst_name" prefWidth="111.19996643066406" style="-fx-background-color: #FAF2D3;" text="Name" />
-            <TableColumn fx:id="colLast_name" prefWidth="132.79998779296875" style="-fx-background-color: #FAF2D3;" text="Salary ID" />
-            <TableColumn fx:id="colTel" prefWidth="139.20001220703125" style="-fx-background-color: #FAF2D3;" text="Salary" />
-            <TableColumn fx:id="colAddress" prefWidth="136.79997558593755" style="-fx-background-color: #FAF2D3;" text="Date" />
+            <TableColumn fx:id="colSalaryId" prefWidth="159.6000213623047" style="-fx-background-color: #FAF2D3;" text="Salary Id" />
+            <TableColumn fx:id="colEmp_id" prefWidth="136.39996337890625" style="-fx-background-color: #FAF2D3;" text="Employee Id" />
+            <TableColumn fx:id="colDate" prefWidth="145.4000244140625" style="-fx-background-color: #FAF2D3;" text="Date" />
+            <TableColumn fx:id="colSalary" prefWidth="194.0" style="-fx-background-color: #FAF2D3;" text="Salary" />
          </columns>
       </TableView>
       <Pane layoutX="-1.0" prefHeight="146.0" prefWidth="1207.0" style="-fx-background-color: C70039;">

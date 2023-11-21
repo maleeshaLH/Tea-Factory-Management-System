@@ -49,11 +49,11 @@ public class SignupFormcontroller {
     @FXML
     void btnsignupOnAction(ActionEvent event) {
         String username = txtusername.getText();
-        String password = txtpassword.getText();
         String email = txtemail.getText();
+        String password = txtpassword.getText();
 
         try {
-            boolean isSaved = UserModel.saveUser(new UserDto(username,password,email));
+            boolean isSaved = UserModel.saveUser(new UserDto(username,email,password));
             if (isSaved){
                 new Alert(Alert.AlertType.CONFIRMATION,"User Added Successfully").show();
                 return;

@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.thigakade.model.UserModel;
 
 import java.io.IOException;
 
@@ -27,15 +28,32 @@ public class LoginpageFormcontroller {
 
     @FXML
     private TextField txtusername;
+    private UserModel userModel=new UserModel();
+
 
     @FXML
-    void btnloginOnAction(ActionEvent event) {
+    void btnloginOnAction(ActionEvent event) throws IOException {
+        String username = txtusername.getText();
+        String password = txtpassword.getText();
+
+        if (UserModel.saveUser(username,password)){
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashBoard_form.fxml"));
+            Scene scene = new Scene(anchorPane);
+            Stage stage = (Stage) root.getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("dashboard Manage");
+            stage.centerOnScreen();
+
+        }
+           // String dto = userModel.searchUser(username,password);
+
+
 
     }
 
     @FXML
     void btnsignUpOnAction(ActionEvent event) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/signup.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/signup_form.fxml"));
         Scene scene = new Scene(anchorPane);
         Stage stage = (Stage) root.getScene().getWindow();
         stage.setScene(scene);

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.SupplierOrderFormController">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.SupplierOrderFormController">
    <children>
       <Pane layoutX="122.0" layoutY="176.0" prefHeight="230.0" prefWidth="554.0" style="-fx-background-color: E0D8B0;">
          <children>
@@ -51,17 +45,17 @@
             <TableColumn fx:id="coltel" prefWidth="158.4000244140625" style="-fx-background-color: E0D8B0;" text="Discription" />
          </columns>
       </TableView>
-      <JFXButton layoutX="727.0" layoutY="260.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: a084e8;" text="Delete" textFill="#a084e8">
+      <JFXButton layoutX="727.0" layoutY="260.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Delete" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="727.0" layoutY="303.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: a084e8;" text="Update" textFill="#a084e8">
+      <JFXButton layoutX="727.0" layoutY="303.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Update" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="727.0" layoutY="216.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: a084e8;" text="Save" textFill="#a084e8">
+      <JFXButton layoutX="727.0" layoutY="216.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Save" textFill="#a084e8">
          <font>
             <Font size="14.0" />
          </font>

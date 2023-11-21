@@ -168,7 +168,7 @@ public class OrderFormcontroller {
         String id = cmbCustomerId.getValue();
         CustomerDto dto = customerModel.searchCustomer(id);
 
-        lblCustomerName.setText(dto.getCity());
+        lblCustomerName.setText(dto.getFirst_name());
 
 
     }

@@ -1,7 +1,6 @@
 package lk.Ijse.thigakade.model;
 
 import lk.Ijse.thigakade.db.DbConnection;
-import lk.Ijse.thigakade.dto.CustomerDto;
 import lk.Ijse.thigakade.dto.EmployeeDto;
 
 import java.sql.Connection;
@@ -23,6 +22,29 @@ public class EmployeeModel {
 
 
     }
+
+    public  List<EmployeeDto> loadAllEmployee() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM employee";
+        ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
+
+        List<EmployeeDto> empList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            empList.add(new EmployeeDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
+            ));
+        }
+        return empList;
+    }
+
+
 
     public boolean saveEmployee(EmployeeDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
@@ -86,7 +108,9 @@ public class EmployeeModel {
 
     }
 
-    public List<EmployeeDto> getAlEmployee() throws SQLException {
+
+
+    public List<EmployeeDto> getAllEmployee() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM employee";
@@ -104,10 +128,11 @@ public class EmployeeModel {
             String e_nic = resultSet.getString(4);
             String e_city = resultSet.getString(5);
             String  e_tel = resultSet.getString(6);
-           var dto = new EmployeeDto(e_id,e_first_name,e_last_name,e_nic,e_city,e_tel);
-           dtoList.add(dto);
+            var dto = new EmployeeDto(e_id,e_first_name,e_last_name,e_nic,e_city,e_tel);
+            dtoList.add(dto);
 
         }
         return dtoList;
+
     }
 }

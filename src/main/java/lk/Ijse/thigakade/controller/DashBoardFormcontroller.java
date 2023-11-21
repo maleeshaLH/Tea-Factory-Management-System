@@ -61,7 +61,7 @@ public class DashBoardFormcontroller {
     }
 
     public void btnSalaryonAction(ActionEvent event) throws IOException {
-        AnchorPane anchorPane = (FXMLLoader.load(this.getClass().getResource("/view/progress_form.fxml")));
+        AnchorPane anchorPane = (FXMLLoader.load(this.getClass().getResource("/view/salary_form.fxml")));
         Scene scene = new Scene(anchorPane);
         Stage stage =(Stage) root.getScene().getWindow();
         stage.setScene(scene);

@@ -30,8 +30,10 @@ public class PlaceOrderModel {
                 }
             }
         } catch (SQLException e) {
+            assert connection != null;
             connection.rollback();
         } finally {
+            assert connection != null;
             connection.setAutoCommit(true);
         }
         return result;
