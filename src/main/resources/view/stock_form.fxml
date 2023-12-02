@@ -1,67 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.StockFormcontroller">
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.PreparedStockFormcontroller">
    <children>
-      <Pane layoutX="142.0" layoutY="161.0" prefHeight="299.0" prefWidth="590.0" style="-fx-background-color: #4F6F52;">
+      <ImageView fitHeight="700.0" fitWidth="1200.0">
+         <image>
+            <Image url="@../image/peakpx.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="67.0" layoutY="24.0" prefHeight="647.0" prefWidth="1090.0" style="-fx-background-color: #D7DBDD;">
          <children>
-            <TextField fx:id="txtId" layoutX="45.0" layoutY="49.0" onAction="#txtsearchOnAction" prefHeight="25.0" prefWidth="200.0" promptText="id" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtId" layoutX="95.0" layoutY="164.0" onAction="#txtsearchOnAction" prefHeight="25.0" prefWidth="200.0" promptText="id" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextField>
-            <TextField fx:id="txtqty" layoutX="346.0" layoutY="164.0" prefHeight="25.0" prefWidth="200.0" promptText="qty" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtqty" layoutX="95.0" layoutY="360.0" prefHeight="25.0" prefWidth="200.0" promptText="qty" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextField>
-            <TextField fx:id="txtweight" layoutX="45.0" layoutY="164.0" prefHeight="25.0" prefWidth="200.0" promptText="weight" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtweight" layoutX="432.0" layoutY="262.0" prefHeight="25.0" prefWidth="200.0" promptText="weight" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextField>
-            <TextField fx:id="txtname" layoutX="345.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" promptText="name" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtname" layoutX="432.0" layoutY="164.0" prefHeight="25.0" prefWidth="200.0" promptText="Description" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextField>
-         </children>
-      </Pane>
-      <TableView fx:id="tblStock" layoutX="140.0" layoutY="464.0" prefHeight="266.0" prefWidth="653.0" style="-fx-background-color: #4F6F52;">
-        <columns>
-          <TableColumn fx:id="colproductionid" prefWidth="164.79998779296875" style="-fx-background-color: #4F6F52;" text="Production id" />
-          <TableColumn fx:id="colname" prefWidth="136.79998779296875" style="-fx-background-color: #4F6F52;" text="name" />
-            <TableColumn fx:id="colweight" prefWidth="169.59991455078125" style="-fx-background-color: #4F6F52;" text="weight" />
-            <TableColumn fx:id="colqty" prefWidth="181.60000000000002" style="-fx-background-color: #4F6F52;" text="Qty" />
-        </columns>
-      </TableView>
-      <JFXButton layoutX="769.0" layoutY="207.0" onAction="#btnsaveeOnAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: WHITE; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Save" textFill="#a084e8">
-         <font>
-            <Font size="18.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="769.0" layoutY="257.0" onAction="#btnupdateOnAction" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: WHITE; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Update" textFill="#a084e8">
-         <font>
-            <Font size="18.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="768.0" layoutY="314.0" onAction="#btndeleteOnAction" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: WHITE; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Delete" textFill="#a084e8">
-         <font>
-            <Font size="18.0" />
-         </font></JFXButton>
-      <Pane prefHeight="146.0" prefWidth="1207.0" style="-fx-background-color: #3AA6B9;">
-         <children>
-            <Label layoutX="137.0" layoutY="36.0" prefHeight="73.0" prefWidth="852.0" text="PREPAIRED STOCK MANAGEMENT" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <TextField fx:id="txtUnitPrice" layoutX="95.0" layoutY="262.0" promptText="Unit Price" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
-                  <Font name="System Bold" size="50.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-               <effect>
-                  <Glow level="1.0" />
-               </effect>
-            </Label>
-            <JFXButton layoutX="1090.0" layoutY="55.0" onAction="#btnbackOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-border-radius: 10;" text="Back" textFill="WHITE">
+            </TextField>
+            <TableView fx:id="tblStock" layoutX="88.0" layoutY="411.0" prefHeight="213.0" prefWidth="727.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+              <columns>
+                <TableColumn fx:id="colproductionid" prefWidth="140.80001831054688" text="Production id" />
+                <TableColumn fx:id="colname" prefWidth="135.99996948242188" text="name" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="131.20001220703125" text="Unit Price" />
+                  <TableColumn fx:id="colweight" prefWidth="144.0" text="weight" />
+                  <TableColumn fx:id="colqty" prefWidth="172.800048828125" text="Qty" />
+              </columns>
+            </TableView>
+            <JFXButton layoutX="884.0" layoutY="416.0" onAction="#btnsaveeOnAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-radius: 10;" text="Save" textFill="BLUE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="884.0" layoutY="468.0" onAction="#btnupdateOnAction" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-radius: 10;" text="Update" textFill="BLUE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="746.0" layoutY="325.0" onAction="#btnRawStockOnAction" prefHeight="40.0" prefWidth="146.0" style="-fx-background-color: #999999; -fx-border-radius: 10; -fx-border-color: black;" text="RAW STOCK" textFill="RED">
                <styleClass>
                   <String fx:value="fontcolor" />
                   <String fx:value="penenew" />
@@ -70,52 +71,66 @@
                   <Insets right="56.0" top="10.0" />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
+            </JFXButton>
+            <Label layoutX="95.0" layoutY="125.0" prefHeight="27.0" prefWidth="180.0" text="Prapared Stock Id *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="95.0" layoutY="221.0" prefHeight="27.0" prefWidth="180.0" text="Unit Price *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="432.0" layoutY="125.0" prefHeight="27.0" prefWidth="180.0" text="Description *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="432.0" layoutY="221.0" prefHeight="27.0" prefWidth="180.0" text="Weight *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="95.0" layoutY="325.0" prefHeight="27.0" prefWidth="180.0" text="Qty *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="16.0" prefHeight="70.0" prefWidth="600.0" text="Prapared Stock Manage .">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="924.0" layoutY="575.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: black;" text="  ">
+               <styleClass>
+                  <String fx:value="fontcolor" />
+                  <String fx:value="penenew" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets right="56.0" top="10.0" />
+               </opaqueInsets>
                <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="42.0" fitWidth="42.0">
                      <image>
-                        <Image url="@../image/previous.png" />
+                        <Image url="@../image/cleaning.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
+            <JFXButton layoutX="884.0" layoutY="517.0" onAction="#btndeleteOnAction" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-radius: 10;" text="Delete" textFill="BLUE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="929.0" layoutY="325.0" onAction="#btnStockDetailsOnActiom" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #999999; -fx-border-radius: 10; -fx-border-color: black;" text="StockDetails" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
-      <JFXButton layoutX="769.0" layoutY="371.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: transperns; -fx-border-radius: transpa 20pxrent; -fx-border-color: 20px;" text="  ">
-         <styleClass>
-            <String fx:value="fontcolor" />
-            <String fx:value="penenew" />
-         </styleClass>
-         <opaqueInsets>
-            <Insets right="56.0" top="10.0" />
-         </opaqueInsets>
-         <graphic>
-            <ImageView fitHeight="42.0" fitWidth="42.0">
-               <image>
-                  <Image url="@../image/cleaning.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton layoutX="837.0" layoutY="401.0" onAction="#btnbackOnAction" prefHeight="241.0" prefWidth="344.0" style="-fx-border-radius: 10;" text="RAW STOCK">
-         <styleClass>
-            <String fx:value="fontcolor" />
-            <String fx:value="penenew" />
-         </styleClass>
-         <opaqueInsets>
-            <Insets right="56.0" top="10.0" />
-         </opaqueInsets>
-         <font>
-            <Font size="14.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="236.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/raw-materials.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
    </children>
 </AnchorPane>

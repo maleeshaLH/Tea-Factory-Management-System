@@ -11,6 +11,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierModel {
+    public static List<SupplierDto> loadAllSupplier() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM supplier";
+        ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
+
+        List<SupplierDto> supList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            supList.add(new SupplierDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            ));
+        }
+        return supList;
+    }
+
+
+
     public boolean saveSupplier(SupplierDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -60,7 +82,7 @@ public class SupplierModel {
 
     }
 
-    public SupplierDto searchSupplier(String id) throws SQLException {
+    public static SupplierDto searchSupplier(String id) throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM supplier WHERE su_id = ?";
@@ -109,4 +131,6 @@ public class SupplierModel {
 
 
     }
+
+
 }

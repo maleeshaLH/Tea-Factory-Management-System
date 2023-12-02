@@ -20,6 +20,7 @@ import lk.Ijse.thigakade.model.CustomerModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class CustomerFormcontroller {
@@ -106,7 +107,17 @@ public class CustomerFormcontroller {
         }
 
     }
+    private boolean validateCustomer() {
+        String id = txtId.getText();
+//        boolean isCustomerIDValidated = Pattern.compile("[C][0-9]{3,}").matcher(idText).matches();
+        boolean isCustomerIDValidated = Pattern.matches("[c][0-9]{2,}", id);
+        if (!isCustomerIDValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Customer ID!").show();
+        return false;
+        }
+        return true;
 
+    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
@@ -129,26 +140,31 @@ public class CustomerFormcontroller {
 
     @FXML
     void btnSaveOnAction(ActionEvent event)  {
-        String id = txtId.getText();
-        String first_name = txtFirst_name.getText();
-        String last_name =txtLast_name.getText();
-        String tel = txttel.getText();
-        String address = txtAddress.getText();
-        String city = txtcity.getText();
+        boolean isCustomerIdValidated = validateCustomer();
+
+        if (isCustomerIdValidated){
+            String id = txtId.getText();
+            String first_name = txtFirst_name.getText();
+            String last_name =txtLast_name.getText();
+            String tel = txttel.getText();
+            String address = txtAddress.getText();
+            String city = txtcity.getText();
 
 
-        var dto = new CustomerDto(id,first_name,last_name,tel,address,city);
+            var dto = new CustomerDto(id,first_name,last_name,tel,address,city);
 
-        var model = new CustomerModel();
-        try {
-            boolean isSaved = model.saveCustomer(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
-                clesrFields();
+            var model = new CustomerModel();
+            try {
+                boolean isSaved = model.saveCustomer(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                    clesrFields();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
 
     }
 

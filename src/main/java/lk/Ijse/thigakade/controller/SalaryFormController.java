@@ -19,13 +19,17 @@ import lk.Ijse.thigakade.model.SalaryModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class SalaryFormController {
     private final EmployeeModel employeeModel = new EmployeeModel();
     private final SalaryModel salaryModel = new SalaryModel();
 
-
+    @FXML
+    public Label lblSalaryId;
+    @FXML
+    public Label lbltime;
     @FXML
     private ComboBox<String > cmbEmployeeId;
 
@@ -63,9 +67,25 @@ public class SalaryFormController {
     public void initialize() {
         loadEmployeeIds();
         setDate();
+        setTime();
         setCellValueFactory();
-      //  loadAllSalary();
+        generateNextSalaryId();
+        loadAllSalary();
 
+    }
+
+    private void generateNextSalaryId() {
+        try {
+            String orderId = salaryModel.generateNextOrderIds();
+            lblSalaryId.setText(orderId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setTime() {
+        String date = String.valueOf(LocalTime.now());
+        lbltime.setText(date);
     }
 
     private void setCellValueFactory() {
@@ -75,21 +95,22 @@ public class SalaryFormController {
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
     }
 
-   /* private void loadAllSalary() {
+    private void loadAllSalary() {
         var model = new SalaryModel();
 
         ObservableList<SalaryTm> obList = FXCollections.observableArrayList();
 
         try {
-            List<SalaryDto> dtoList = model.getAllSalarys();
+            List<SalaryDto> dtoList = model.getAllCustomers();
 
-            for(SalaryDto dto : dtoList) {
+            for (SalaryDto dto : dtoList) {
                 obList.add(
                         new SalaryTm(
                                 dto.getS_id(),
                                 dto.getEmp_id(),
                                 dto.getDate(),
                                 dto.getSalary()
+
                         )
                 );
             }
@@ -98,7 +119,7 @@ public class SalaryFormController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 
     private void setDate() {
         String date = String.valueOf(LocalDate.now());
@@ -130,7 +151,7 @@ public class SalaryFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String s_id = txtsalaryid.getText();
+        String s_id = lblSalaryId.getText();
         String emp_id = cmbEmployeeId.getValue();
         LocalDate date = LocalDate.parse(lblSalaryDate.getText());
         String salary = txtsalary.getText();

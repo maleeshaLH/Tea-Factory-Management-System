@@ -41,6 +41,13 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+    <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+    <dependency>
+        <groupId>net.sf.jasperreports</groupId>
+        <artifactId>jasperreports</artifactId>
+        <version>6.20.1</version>
+    </dependency>
+
     </dependencies>
 
 </project>

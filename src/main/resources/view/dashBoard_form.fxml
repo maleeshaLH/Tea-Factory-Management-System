@@ -2,138 +2,192 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedAreaChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: A8DF8E;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.DashBoardFormcontroller">
+<AnchorPane fx:id="DashBoard" prefHeight="731.0" prefWidth="1279.0" style="-fx-border-color: red; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.DashBoardFormcontroller">
    <children>
-      <Pane layoutX="1.0" layoutY="1.0" prefHeight="716.0" prefWidth="234.0" style="-fx-background-color: white;">
+      <Pane layoutX="1.0" prefHeight="731.0" prefWidth="253.0" style="-fx-background-color: #D5DBDB; -fx-background-radius: 30;">
          <children>
-            <JFXButton layoutY="200.0" onAction="#btnCustomeronAction" prefHeight="70.0" prefWidth="234.0" text="Customer" wrapText="true">
+            <JFXButton layoutX="29.0" layoutY="177.0" onAction="#btnCustomeronAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-color: black; -fx-border-radius: 10; ack: ;" text="Customer" wrapText="true">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
-            <JFXButton layoutX="1.0" layoutY="271.0" onAction="#btnOrderonAction" prefHeight="70.0" prefWidth="234.0" text="Order">
+            <JFXButton layoutX="29.0" layoutY="246.0" onAction="#btnOrderonAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-radius: 10; -fx-border-color: black;" text="Order">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
-            <JFXButton layoutX="2.0" layoutY="341.0" onAction="#btnStockonAction" prefHeight="70.0" prefWidth="234.0" text="Stock">
+            <JFXButton layoutX="29.0" layoutY="313.0" onAction="#btnStockonAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-color: black; -fx-border-radius: 10;" text="Stock">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
-            <JFXButton layoutX="1.0" layoutY="411.0" onAction="#btnEmployeeonAction" prefHeight="70.0" prefWidth="234.0" text="Employee">
+            <JFXButton layoutX="29.0" layoutY="379.0" onAction="#btnEmployeeonAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-color: black; -fx-border-radius: 10;" text="Employee">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
-            <JFXButton layoutY="481.0" onAction="#btnSalaryonAction" prefHeight="70.0" prefWidth="234.0" text="Salary">
+            <JFXButton layoutX="29.0" layoutY="443.0" onAction="#btnSalaryonAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-radius: 10; -fx-border-color: black;" text="Salary">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
-            <ImageView fitHeight="208.0" fitWidth="232.0" layoutX="4.0" layoutY="-2.0">
+            <ImageView fitHeight="196.0" fitWidth="232.0" layoutX="4.0" layoutY="-2.0">
                <image>
                   <Image url="@../image/app%202.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="-1.0" layoutY="550.0" onAction="#btnSupplieronAction" prefHeight="70.0" prefWidth="234.0" text="Supplier">
+            <JFXButton layoutX="29.0" layoutY="509.0" onAction="#btnSupplieronAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-color: black; -fx-border-radius: 10;" text="Supplier">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="24.0" />
                </font></JFXButton>
+            <JFXButton layoutX="30.0" layoutY="665.0" onAction="#btnLogoutOnAction" prefHeight="53.0" prefWidth="174.0" style="-fx-border-color: black; -fx-border-radius: 10;" text="Log Out">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="235.0" layoutY="1.0" prefHeight="146.0" prefWidth="971.0" style="-fx-background-color: #004225;">
+      <AnchorPane fx:id="root" layoutX="231.0" layoutY="3.0" prefHeight="730.0" prefWidth="1034.0" style="-fx-background-color: #EBEDEF;">
          <children>
-            <Label layoutX="41.0" layoutY="38.0" prefHeight="60.0" prefWidth="420.0" text=" DASHBOARD" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="50.0" />
-               </font>
+            <Pane focusTraversable="true" layoutX="332.0" layoutY="186.0" prefHeight="120.0" prefWidth="140.0" style="-fx-background-color: #EBDEF0; -fx-background-radius: 30;">
+               <children>
+                  <Label layoutX="12.0" layoutY="28.0" prefHeight="40.0" prefWidth="122.0" text="Orders" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="68.0" text="23" textAlignment="CENTER" textFill="#5e4c4c">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
                <effect>
-                  <Glow level="1.0" />
+                  <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
                </effect>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="19.0" layoutY="184.0" prefHeight="120.0" prefWidth="140.0" style="-fx-background-color: #85C1E9; -fx-background-radius: 30;">
+               <children>
+                  <Label layoutX="4.0" layoutY="28.0" prefHeight="40.0" prefWidth="122.0" text="New Users" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="53.0" layoutY="70.0" text="13" textAlignment="CENTER" textFill="#5e4c4c">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+               </effect>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="504.0" layoutY="186.0" prefHeight="120.0" prefWidth="140.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+               <children>
+                  <Label layoutX="9.0" layoutY="26.0" prefHeight="40.0" prefWidth="129.0" text="Product Sold" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="76.0" layoutY="66.0" text="17" textAlignment="CENTER" textFill="#5e4c4c">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+               </effect>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="173.0" layoutY="186.0" prefHeight="120.0" prefWidth="140.0" style="-fx-background-color: #D5F5E3; -fx-background-radius: 30;">
+               <children>
+                  <Label layoutX="17.0" layoutY="23.0" prefHeight="40.0" prefWidth="101.0" text="Progress" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="70.0" text="\$,10000" textAlignment="CENTER" textFill="#5e4c4c">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
+               </effect>
+            </Pane>
+            <Label layoutX="707.0" layoutY="135.0" style="-fx-border-color: blue;">
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="315.0">
+                     <image>
+                        <Image url="@../image/Screenshot%202023-12-01%20004827.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="678.0" layoutY="430.0" prefHeight="230.0" prefWidth="322.0" style="-fx-border-color: blue;">
+               <graphic>
+                  <ImageView fitHeight="260.0" fitWidth="353.0">
+                     <image>
+                        <Image url="@../image/Screenshot%202023-12-01%20004902.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="30.0" layoutY="336.0" prefHeight="382.0" prefWidth="634.0" style="-fx-background-color: white; -fx-border-color: blue;">
+               <graphic>
+                  <ImageView fitHeight="373.0" fitWidth="619.0">
+                     <image>
+                        <Image url="@../image/Screenshot%202023-12-01%20011849.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
          </children>
-         <effect>
-            <DropShadow height="119.26" radius="29.315" width="0.0" />
-         </effect>
-      </Pane>
-      <Pane focusTraversable="true" layoutX="733.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
+      </AnchorPane>
+      <Pane layoutX="237.0" layoutY="3.0" prefHeight="74.0" prefWidth="1008.0">
          <children>
-            <Label layoutX="13.0" layoutY="28.0" prefHeight="40.0" prefWidth="155.0" text="Total Orders" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
+            <Label layoutX="22.0" layoutY="14.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: blue; -fx-border-radius: 10;" text="DashBoard">
                <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-            <Label layoutX="77.0" layoutY="68.0" text="23" textAlignment="CENTER" textFill="#5e4c4c">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-         </children>
-         <effect>
-            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
-         </effect>
-      </Pane>
-      <Pane focusTraversable="true" layoutX="319.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
-         <children>
-            <Label layoutX="26.0" layoutY="30.0" prefHeight="40.0" prefWidth="135.0" text="New Users" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-            <Label layoutX="80.0" layoutY="70.0" text="13" textAlignment="CENTER" textFill="#5e4c4c">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-         </children>
-         <effect>
-            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
-         </effect>
-      </Pane>
-      <Pane focusTraversable="true" layoutX="940.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
-         <children>
-            <Label layoutX="9.0" layoutY="26.0" prefHeight="40.0" prefWidth="163.0" text="Product Sold" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="66.0" text="17" textAlignment="CENTER" textFill="#5e4c4c">
+            <Label layoutX="640.0" layoutY="20.0" prefHeight="40.0" prefWidth="201.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: blue; -fx-border-radius: 20;" text="Search hear...">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font size="18.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0">
+                     <image>
+                        <Image url="@../image/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="874.0" layoutY="3.0" prefHeight="53.0" prefWidth="41.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 10; -fx-border-color: blue;">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="39.0">
+                     <image>
+                        <Image url="@../image/notification.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="944.0" layoutY="7.0" prefHeight="53.0" prefWidth="58.0" style="-fx-background-radius: 20; -fx-background-color: white; -fx-border-color: blue; -fx-border-radius: 10;">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="46.0">
+                     <image>
+                        <Image url="@../image/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
          </children>
-         <effect>
-            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
-         </effect>
       </Pane>
-      <Pane focusTraversable="true" layoutX="526.0" layoutY="185.0" prefHeight="140.0" prefWidth="180.0" style="-fx-background-color: CEDEBD; -fx-background-radius: 30;">
-         <children>
-            <Label layoutX="44.0" layoutY="23.0" prefHeight="40.0" prefWidth="101.0" text="Progress" textAlignment="CENTER" textFill="#5e4c4c" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-            <Label layoutX="45.0" layoutY="70.0" text="\$,10000" textAlignment="CENTER" textFill="#5e4c4c">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
-         </children>
-         <effect>
-            <DropShadow height="49.08" radius="22.2825" spread="0.06" width="42.05" />
-         </effect>
-      </Pane>
-      <Label layoutX="599.0" layoutY="51.0" />
-      <StackedAreaChart layoutX="265.0" layoutY="348.0" prefHeight="368.0" prefWidth="911.0" title="Monthly Progress">
-        <xAxis>
-          <NumberAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </StackedAreaChart>
    </children>
    <opaqueInsets>
       <Insets top="10.0" />

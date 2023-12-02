@@ -9,13 +9,12 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class CartTm {
-    private String p_id;
-    private String name;
-    private int  weight;
-    private  int unitPrice;
+public class StockOrderTm {
+    private String PreparedStockId;
+    private String RawStockId;
+    private String Description;
+    private int unitPrice;
     private int qty;
-    private double tot;
+    private int total;
     private Button btn;
-
 }

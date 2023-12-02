@@ -1,8 +1,9 @@
 package lk.Ijse.thigakade.model;
 
 import lk.Ijse.thigakade.db.DbConnection;
-import lk.Ijse.thigakade.dto.StockDto;
+import lk.Ijse.thigakade.dto.PreparedstockDto;
 import lk.Ijse.thigakade.dto.tm.CartTm;
+import lk.Ijse.thigakade.dto.tm.StockOrderTm;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,16 +14,40 @@ import java.util.List;
 
 public class StockModel {
 
-    public boolean saveStock(StockDto dto) throws SQLException {
+    public static boolean updatePreparedStock(List<StockOrderTm> tmList) throws SQLException {
+        for (StockOrderTm stockOrderTm : tmList) {
+            if(!updatePreparedQty(stockOrderTm)) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    private static boolean updatePreparedQty(StockOrderTm stockOrderTm) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        System.out.println("3");
+        String sql = "UPDATE prepared_stock SET qty = qty + ? WHERE p_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setInt(1, stockOrderTm.getQty());
+        pstm.setString(2, stockOrderTm.getPreparedStockId());
+
+        return pstm.executeUpdate() > 0; //true
+    }
+
+
+
+    public boolean saveStock(PreparedstockDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO prepared_stock VALUES(?,?,?,?)";
+        String sql = "INSERT INTO prepared_stock VALUES(?,?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1,dto.getP_id());
-        pstm.setString(2,dto.getP_name());
-        pstm.setString(3,dto.getP_weight());
-        pstm.setString(4,dto.getP_qty());
+        pstm.setString(2,dto.getDescription());
+        pstm.setInt(3,dto.getUnit_price());
+        pstm.setInt(4,dto.getWeight());
+        pstm.setInt(5,dto.getQty());
 
         boolean isSaved = pstm.executeUpdate() >0 ;
 
@@ -31,16 +56,17 @@ public class StockModel {
 
     }
 
-    public boolean updateStock(StockDto dto) throws SQLException {
+    public boolean updateStock(PreparedstockDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE prepared_stock SET name = ?,weight = ?,qty = ? WHERE p_id =?";
+        String sql = "UPDATE prepared_stock SET description = ?,unit_price =? ,weight = ?,qty = ? WHERE p_id =?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1,dto.getP_name());
-        pstm.setString(2,dto.getP_weight());
-        pstm.setString(3,dto.getP_qty());
-        pstm.setString(4,dto.getP_id());
+        pstm.setString(1,dto.getP_id());
+        pstm.setString(2,dto.getDescription());
+        pstm.setInt(3,dto.getUnit_price());
+        pstm.setInt(4,dto.getWeight());
+        pstm.setInt(5,dto.getQty());
 
 
         boolean isUpdate = pstm.executeUpdate() >0 ;
@@ -51,7 +77,7 @@ public class StockModel {
 
     }
 
-    public StockDto searchStock(String id) throws SQLException {
+    public PreparedstockDto searchStock(String id) throws SQLException {
         Connection connection=DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM prepared_stock WHERE p_id = ?";
@@ -60,15 +86,16 @@ public class StockModel {
 
         ResultSet resultSet = pstm.executeQuery();
 
-        StockDto dto = null;
+        PreparedstockDto dto = null;
 
         if (resultSet.next()){
             String p_id = resultSet.getString(1);
             String p_name = resultSet.getString(2);
-            String p_weight = resultSet.getString(3);
-            String p_qty = resultSet.getString(4);
+            Integer p_unitPrice =resultSet.getInt(3);
+            Integer p_weight = resultSet.getInt(4);
+            Integer p_qty = resultSet.getInt(5);
 
-            dto = new StockDto(p_id,p_name,p_weight,p_qty);
+            dto = new PreparedstockDto(p_id,p_name,p_unitPrice,p_weight,p_qty);
         }
         return dto;
 
@@ -86,7 +113,7 @@ public class StockModel {
 
     }
 
-    public static List<StockDto> loadAllStock() throws SQLException {
+    public static List<PreparedstockDto> loadAllStock() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM prepared_stock";
@@ -94,14 +121,15 @@ public class StockModel {
 
         ResultSet resultSet = pstm.executeQuery();
 
-        List<StockDto> dtoList = new ArrayList<>();
+        List<PreparedstockDto> dtoList = new ArrayList<>();
 
         while (resultSet.next()){
-            var dto = new StockDto(
+            var dto = new PreparedstockDto(
               resultSet.getString(1),
               resultSet.getString(2),
-              resultSet.getString(3),
-              resultSet.getString(4)
+              resultSet.getInt(3),
+              resultSet.getInt(4),
+              resultSet.getInt(5)
             );
             dtoList.add(dto);
         }
@@ -110,24 +138,25 @@ public class StockModel {
 
     }
 
-    public List<StockDto> getAllStock() throws SQLException {
+    public List<PreparedstockDto> getAllStock() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM prepared_stock";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        List<StockDto> dtoList = new ArrayList<>();
+        List<PreparedstockDto> dtoList = new ArrayList<>();
 
         ResultSet resultSet = pstm.executeQuery();
 
         while (resultSet.next()) {
             String pr_id = resultSet.getString(1);
             String pr_name = resultSet.getString(2);
-            String pr_weight = resultSet.getString(3);
-            String pr_qty = resultSet.getString(4);
+            Integer pr_unitPrice = resultSet.getInt(3);
+            Integer pr_weight = resultSet.getInt(4);
+            Integer pr_qty = resultSet.getInt(5);
 
 
-            var dto = new StockDto(pr_id,pr_name,pr_weight,pr_qty);
+            var dto = new PreparedstockDto(pr_id,pr_name,pr_unitPrice,pr_weight,pr_qty);
             dtoList.add(dto);
         }
         return dtoList;
@@ -153,6 +182,33 @@ public class StockModel {
         pstm.setString(2, cartTm.getP_id());
 
         return pstm.executeUpdate() > 0; //true
+    }
+
+
+    public List<PreparedstockDto> loadAllStockIds() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM prepared_stock";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<PreparedstockDto> dtoList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            var dto = new PreparedstockDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getInt(4),
+                    resultSet.getInt(5)
+            );
+
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+
     }
 
 

@@ -219,5 +219,13 @@ public class SupplierFormcontroller {
         txttel.setText(dto.getS_tel());
 
     }
+    @FXML
+    public void btnSupplierOrderOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/supplierOrder_form.fxml"));
+        Stage stage = (Stage) root.getScene().getWindow();
 
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("DashBoard");
+        stage.centerOnScreen();
+    }
 }

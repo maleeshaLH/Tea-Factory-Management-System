@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class StockDto {
+public class PreparedstockDto {
     private String p_id;
-    private String p_name;
-    private String p_weight;
-    private String p_qty;
+    private String description;
+    private int unit_price;
+    private int weight;
+    private int qty;
 }

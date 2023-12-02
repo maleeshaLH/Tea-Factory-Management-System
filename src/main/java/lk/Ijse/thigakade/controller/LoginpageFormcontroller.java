@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -36,20 +37,26 @@ public class LoginpageFormcontroller {
         String username = txtusername.getText();
         String password = txtpassword.getText();
 
-        if (UserModel.saveUser(username,password)){
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashBoard_form.fxml"));
-            Scene scene = new Scene(anchorPane);
-            Stage stage = (Stage) root.getScene().getWindow();
-            stage.setScene(scene);
-            stage.setTitle("dashboard Manage");
-            stage.centerOnScreen();
 
-        }
+            if (UserModel.saveUser(username,password)){
+                NavigatetoDashBoard();
+
+            }
+
+
            // String dto = userModel.searchUser(username,password);
-
-
-
     }
+
+    private void NavigatetoDashBoard() throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashBoard_form.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("dashboard Manage");
+        stage.centerOnScreen();
+    }
+
+
 
     @FXML
     void btnsignUpOnAction(ActionEvent event) throws IOException {
@@ -61,7 +68,15 @@ public class LoginpageFormcontroller {
         stage.centerOnScreen();
 
     }
+    public static void switchNavigation(String path, AnchorPane event ) throws IOException {
+        event.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view/" + path));
+        Parent root = loader.load();
+        event.getChildren().add(root);
+    }
 
 
+    private static class Navigation {
+    }
 }
 

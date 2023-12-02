@@ -1,90 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.RawStockFormController">
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.thigakade.controller.RawStockFormController">
    <children>
-      <JFXButton layoutX="896.0" layoutY="355.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: transperns; -fx-border-radius: transpa 20pxrent; -fx-border-color: 20px;" text="  ">
-         <styleClass>
-            <String fx:value="fontcolor" />
-            <String fx:value="penenew" />
-         </styleClass>
-         <opaqueInsets>
-            <Insets right="56.0" top="10.0" />
-         </opaqueInsets>
-         <graphic>
-            <ImageView fitHeight="42.0" fitWidth="42.0">
-               <image>
-                  <Image url="@../image/cleaning.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton layoutX="863.0" layoutY="260.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Delete" textFill="#a084e8">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="863.0" layoutY="303.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Update" textFill="#a084e8">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="863.0" layoutY="216.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: a084e8; -fx-border-radius: 10;" text="Save" textFill="#a084e8">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <Pane layoutX="171.0" layoutY="176.0" prefHeight="290.0" prefWidth="635.0" style="-fx-background-color: FF6969;">
+      <ImageView fitHeight="700.0" fitWidth="1200.0" layoutY="1.0">
+         <image>
+            <Image url="@../image/peakpx.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="74.0" layoutY="30.0" prefHeight="646.0" prefWidth="1052.0" style="-fx-background-color: #D7DBDD;">
          <children>
-            <TextField fx:id="txtLast_name" layoutX="33.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Weight" style="-fx-background-color: transpared;">
+            <JFXButton layoutX="895.0" layoutY="432.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Update" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="895.0" layoutY="381.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Save" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblRawStock" layoutX="83.0" layoutY="360.0" prefHeight="274.0" prefWidth="762.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <columns>
+                  <TableColumn fx:id="colR_id" prefWidth="146.4000244140625" style="-fx-background-color: #FAF2D3;" text="Raw stock id" />
+                  <TableColumn fx:id="colName" prefWidth="130.39996337890625" style="-fx-background-color: #FAF2D3;" text="Name" />
+                  <TableColumn fx:id="colUnic_price" prefWidth="120.79998779296875" style="-fx-background-color: #FAF2D3;" text="Unic Price" />
+                  <TableColumn fx:id="colWeight" prefWidth="169.5999755859375" style="-fx-background-color: #FAF2D3;" text="Weight" />
+                  <TableColumn fx:id="colQuality" prefWidth="194.39996337890625" style="-fx-background-color: #FAF2D3;" text="Quality" />
+               </columns>
+            </TableView>
+            <TextField fx:id="txtweight" layoutX="519.0" layoutY="240.0" prefHeight="26.0" prefWidth="228.0" promptText="Weight" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-            <TextField fx:id="txttel" layoutX="290.0" layoutY="127.0" prefHeight="26.0" prefWidth="228.0" promptText="Quality" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtqulity" layoutX="114.0" layoutY="314.0" prefHeight="26.0" prefWidth="228.0" promptText="Qty" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-            <Label layoutX="297.0" layoutY="68.0" prefHeight="25.0" prefWidth="51.0" text="Name" textFill="#facaca">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtLast_name1" layoutX="33.0" layoutY="62.0" prefHeight="26.0" prefWidth="228.0" promptText="Raw stock id" style="-fx-background-color: transpared;">
+            <TextField fx:id="txtR_id" layoutX="114.0" layoutY="147.0" onAction="#btnsearchOnAction" prefHeight="26.0" prefWidth="228.0" promptText="Raw stock id" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-         </children>
-      </Pane>
-      <TableView fx:id="tblCustomer" layoutX="171.0" layoutY="482.0" prefHeight="300.0" prefWidth="626.0">
-         <columns>
-            <TableColumn fx:id="colId" prefWidth="175.5999755859375" style="-fx-background-color: #FAF2D3;" text="Raw stock id" />
-            <TableColumn fx:id="colFirst_name" prefWidth="126.79998779296875" style="-fx-background-color: #FAF2D3;" text="Name" />
-            <TableColumn fx:id="colLast_name" prefWidth="114.99996948242188" style="-fx-background-color: #FAF2D3;" text="Weight" />
-            <TableColumn fx:id="colTel" prefWidth="209.79998779296875" style="-fx-background-color: #FAF2D3;" text="Quality" />
-         </columns>
-      </TableView>
-      <Pane prefHeight="146.0" prefWidth="1207.0" style="-fx-background-color: C70039;">
-         <children>
-            <Label layoutX="372.0" layoutY="34.0" prefHeight="73.0" prefWidth="335.0" text="RAW STOCK " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <TextField fx:id="txtName" layoutX="519.0" layoutY="147.0" promptText="Description" style="-fx-border-color: black; -fx-border-radius: 10;">
                <font>
-                  <Font name="System Bold" size="50.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
-               <effect>
-                  <Glow level="1.0" />
-               </effect>
-            </Label>
-            <JFXButton layoutX="1090.0" layoutY="55.0" onAction="#btnbackOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-border-radius: 10;" text="Back" textFill="WHITE">
+            </TextField>
+            <TextField fx:id="txtUnicprice" layoutX="114.0" layoutY="240.0" promptText="Unic Price" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></TextField>
+            <JFXButton layoutX="924.0" layoutY="544.0" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: black;" text="  ">
+               <styleClass>
+                  <String fx:value="fontcolor" />
+                  <String fx:value="penenew" />
+               </styleClass>
+               <opaqueInsets>
+                  <Insets right="56.0" top="10.0" />
+               </opaqueInsets>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="42.0">
+                     <image>
+                        <Image url="@../image/cleaning.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="895.0" layoutY="483.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Delete" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="925.0" layoutY="31.0" onAction="#btnbackOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-border-radius: 10; -fx-background-color: #F5EEF8; -fx-border-color: black;" text="Back" textFill="#080808">
                <styleClass>
                   <String fx:value="fontcolor" />
                   <String fx:value="penenew" />
@@ -103,12 +105,37 @@
                   </ImageView>
                </graphic>
             </JFXButton>
+            <Label layoutX="114.0" layoutY="113.0" text="Raw Stock Id *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="203.0" text="Weight *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="113.0" text="Description *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="114.0" layoutY="277.0" text="Qty *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="114.0" layoutY="203.0" text="Unit Price *">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="331.0" layoutY="23.0" text="Raw Stock Manage .">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="267.0" fitWidth="393.0" layoutX="889.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/money.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

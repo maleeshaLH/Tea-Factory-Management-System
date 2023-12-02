@@ -16,7 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.Ijse.thigakade.dto.CustomerDto;
 import lk.Ijse.thigakade.dto.PlaceOrderDto;
-import lk.Ijse.thigakade.dto.StockDto;
+import lk.Ijse.thigakade.dto.PreparedstockDto;
 import lk.Ijse.thigakade.dto.tm.CartTm;
 import lk.Ijse.thigakade.model.CustomerModel;
 import lk.Ijse.thigakade.model.OrderModel;
@@ -36,14 +36,18 @@ public class OrderFormcontroller {
     private final StockModel stockModel = new StockModel();
     private final ObservableList<CartTm> obList = FXCollections.observableArrayList();
     private final PlaceOrderModel placeOrderModel = new PlaceOrderModel();
+    @FXML
+    public TableColumn<?,?> colunitPrice;
+    @FXML
+    public TableColumn <?,?>colAction;
+    @FXML
+    public Label lblUnitPrice;
 
     @FXML
     private TableView<CartTm> tblOrderCart;
     @FXML
     private Label lblNetTotal;
 
-    @FXML
-    private TableColumn<?, ?> cloAction;
     @FXML
     private TableColumn<?, ?> colName;
     @FXML
@@ -98,10 +102,11 @@ public class OrderFormcontroller {
     private void setCellValueFactory() {
         colProductionId.setCellValueFactory(new PropertyValueFactory<>("p_id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colunitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colWeight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("tot"));
-        cloAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
+        colAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
 
 
     }
@@ -110,9 +115,9 @@ public class OrderFormcontroller {
     private void loadStockIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<StockDto> stocklist = stockModel.loadAllStock();
+            List<PreparedstockDto> stocklist = stockModel.loadAllStock();
 
-            for (StockDto Dto : stocklist) {
+            for (PreparedstockDto Dto : stocklist) {
                 obList.add(Dto.getP_id());
             }
 
@@ -180,11 +185,12 @@ public class OrderFormcontroller {
        // txtQty.requestFocus();
 
         try {
-            StockDto dto = stockModel.searchStock(id);
+            PreparedstockDto dto = stockModel.searchStock(id);
 
-            lblStockName.setText(dto.getP_name());
-            lblWeight.setText(String.valueOf(dto.getP_weight()));
-            lblQty.setText(String.valueOf(dto.getP_qty()));
+            lblStockName.setText(dto.getP_id());
+            lblUnitPrice.setText(String.valueOf(dto.getUnit_price()));
+            lblWeight.setText(String.valueOf(dto.getWeight()));
+            lblQty.setText(String.valueOf(dto.getQty()));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -225,8 +231,9 @@ public class OrderFormcontroller {
     void btnAddToCartOnAction(ActionEvent event) {
         String p_Id = cmbStockId.getValue();
         String name = lblStockName.getText();
+        int unitPrice = Integer.parseInt(lblUnitPrice.getText());
         int qty = Integer.parseInt(txtQty.getText());
-        double weight = Double.parseDouble(lblWeight.getText());
+        int weight = Integer.parseInt(lblWeight.getText());
         double total = qty * weight;
         Button btn = new Button("remove");
         btn.setCursor(Cursor.HAND);
@@ -263,7 +270,8 @@ public class OrderFormcontroller {
         obList.add(new CartTm(
                 p_Id,
                 name,
-                (int) weight,
+                weight,
+                unitPrice,
                 qty,
                 total,
                 btn

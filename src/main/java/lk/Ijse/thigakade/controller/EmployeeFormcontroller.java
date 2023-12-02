@@ -20,6 +20,7 @@ import lk.Ijse.thigakade.model.EmployeeModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class EmployeeFormcontroller {
 
@@ -133,25 +134,43 @@ public class EmployeeFormcontroller {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String id = txtEmployeeid.getText();
-        String first_name = txtFirst_name.getText();
-        String last_name =txtLast_name.getText();
-        String nic = txtnic.getText();
-        String city = txtcity.getText();
-        String tel = txttel.getText();
 
-        var dto = new EmployeeDto(id, first_name,last_name,nic, city, tel);
+        boolean isEmployeeIdValideted = validateCustomer();
+        if (isEmployeeIdValideted) {
 
-        var model = new EmployeeModel();
-        try {
-            boolean isSaved = model.saveEmployee(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
-                clearFields();
+
+            String id = txtEmployeeid.getText();
+            String first_name = txtFirst_name.getText();
+            String last_name = txtLast_name.getText();
+            String nic = txtnic.getText();
+            String city = txtcity.getText();
+            String tel = txttel.getText();
+
+            var dto = new EmployeeDto(id, first_name, last_name, nic, city, tel);
+
+            var model = new EmployeeModel();
+            try {
+                boolean isSaved = model.saveEmployee(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
+                    clearFields();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
+    }
+
+    private boolean validateCustomer() {
+        String id = txtEmployeeid.getText();
+//        boolean isCustomerIDValidated = Pattern.compile("[C][0-9]{3,}").matcher(idText).matches();
+        boolean isEmployeeIdValideted = Pattern.matches("[e][0-9]{2,}", id);
+        if (!isEmployeeIdValideted) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Employee ID!").show();
+            return false;
+        }
+        return true;
 
     }
 
